@@ -1,0 +1,13 @@
+
+GITHUB_APP_ID="123456"
+GITHUB_WEBHOOK_SECRET="abcde12345fghij67890klmno"
+GITHUB_PRIVATE_KEY_PATH="/app/github_private_key.pem"
+
+
+MISTRAL_API_KEY="sk-your-mistral-api-key-here"
+
+
+RABBITMQ_DEFAULT_USER="guest"
+RABBITMQ_DEFAULT_PASS="guest"
+RABBITMQ_HOST="rabbitmq"
+RABBITMQ_QUEUE_NAME="review_jobs"

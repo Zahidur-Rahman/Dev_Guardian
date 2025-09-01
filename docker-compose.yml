@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672" # AMQP protocol port
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gateway:
+    build: ./services/gateway
+    ports:
+      - "8000:80"
+    env_file:
+      - .env
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - ./services/gateway/app:/app
+
+  worker:
+    build: ./services/worker
+    env_file:
+      - .env
+    volumes:
+      - ./services/worker/app:/app
+      - ./github_private_key.pem:/app/github_private_key.pem # Mount the private key
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
