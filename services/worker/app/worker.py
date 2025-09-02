@@ -6,7 +6,7 @@ import os
 
 from dotenv import load_dotenv
 
-from llm_client import MistralAIClient
+from llm_client import GroqClient # <-- Change this line
 from github_client import GitHubAppClient
 
 load_dotenv()
@@ -20,7 +20,7 @@ async def process_job(job_data):
     print(f"Processing PR #{pr_number} from repo {repo_full_name}")
 
     github_client = GitHubAppClient(installation_id)
-    llm_client = MistralAIClient()
+    llm_client = GroqClient() # <-- Change this line
 
     try:
         # Step 1: Get the code diff

@@ -1,0 +1,9 @@
+
+RABBITMQ_DEFAULT_USER="zahid"
+RABBITMQ_DEFAULT_PASS="zahid1234"
+RABBITMQ_HOST="rabbitmq"
+RABBITMQ_QUEUE_NAME="review_jobs"
+
+GITHUB_APP_ID="<Your App ID, e.g., 123456>"
+GITHUB_WEBHOOK_SECRET="<The webhook secret you defined>"
+GITHUB_PRIVATE_KEY_PATH="/app/github_private_key.pem" # Ensure the file is mounted in Docker
