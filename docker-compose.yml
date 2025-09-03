@@ -34,7 +34,7 @@ services:
       - .env
     volumes:
       - ./services/worker/app:/app
-      - ./github_private_key.pem:/app/github_private_key.pem # Mount the private key
+      - ./services/worker/devguardian-bot.2025-09-02.private-key.pem:/app/devguardian-bot.2025-09-02.private-key.pem
     depends_on:
       rabbitmq:
         condition: service_healthy

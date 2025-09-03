@@ -1,5 +1,7 @@
+__pycache__/
+*.pyc
 .env
 .env.*
-*.pyc
-__pycache__/
+.devcontainer/
+.git
 services/*/devguardian-bot*.private-key.pem
