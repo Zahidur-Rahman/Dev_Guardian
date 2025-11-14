@@ -30,6 +30,8 @@ services:
 
   worker:
     build: ./services/worker
+    ports:
+      - "8080:8080"  # Health check endpoint
     env_file:
       - .env
     volumes:

@@ -18,4 +18,4 @@ docker-compose up
 
 Notes
 - Do not commit private keys or `.env` files. Use a secrets manager for production.
-- Pin dependency versions in `requirements.txt` for reproducible builds
+- Pin dependency versions in `requirements.txt` for reproducible builds.

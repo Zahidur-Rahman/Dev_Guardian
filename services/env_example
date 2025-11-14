@@ -1,9 +1,13 @@
-
+# RabbitMQ Configuration
 RABBITMQ_DEFAULT_USER="zahid"
 RABBITMQ_DEFAULT_PASS="zahid1234"
 RABBITMQ_HOST="rabbitmq"
 RABBITMQ_QUEUE_NAME="review_jobs"
 
+# GitHub App Configuration
 GITHUB_APP_ID="<Your App ID, e.g., 123456>"
 GITHUB_WEBHOOK_SECRET="<The webhook secret you defined>"
-GITHUB_PRIVATE_KEY_PATH="/app/devguardian-bot.2025-09-02.private-key.pem" 
+GITHUB_PRIVATE_KEY_PATH="/app/devguardian-bot.2025-09-02.private-key.pem"
+
+# Groq LLM Configuration
+GROQ_API_KEY="<Your Groq API Key from https://console.groq.com>" 
